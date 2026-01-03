@@ -1,0 +1,14 @@
+.page-login{
+    animation: masuk 0.5s alternate ease-out;
+
+
+}
+
+@keyframes masuk{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

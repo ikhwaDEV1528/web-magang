@@ -1,0 +1,8 @@
+.bt-add-kasus{
+    background-color: #F5C542;
+}
+
+.bt-add-kasus:hover{
+   transform: scale(0.9);
+   background-color: #f5d376;
+}
