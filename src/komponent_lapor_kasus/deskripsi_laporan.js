@@ -8,8 +8,8 @@ export function Deskripsi_laporan(){
 
     
     return(
-       <main className="w-full max-w-xl mx-auto mt-6 p-5 rounded-lg 
-                 bg-slate-800 border-2 border-yellow-400 mt-[-50px] border-slate-700 shadow-lg">
+       <main className="w-full max-w-xl mx-auto mt-6 p-5  
+                 bg-slate-800 border-0 border-yellow-400 mt-[-50px] border-slate-700 shadow-lg">
 
   <label className="block mb-2 text-sm font-semibold text-yellow-400">
     Detail Laporan

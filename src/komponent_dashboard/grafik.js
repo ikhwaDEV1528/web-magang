@@ -45,7 +45,7 @@ export function Grafik(){
 
 
     return(
-       <main className="bg-white border border-yellow-600 w-full rounded-md h-100 p-5 space-y-3">
+       <main className="bg-white  w-full rounded-md h-100 p-5 space-y-3">
          <h2 className="font-bold text-lg text-gray-800">Tren Kasus Nasional</h2>
 
          <div className="flex flex-col gap-2 text-sm text-gray-700">

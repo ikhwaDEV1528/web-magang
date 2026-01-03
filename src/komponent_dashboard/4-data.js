@@ -26,7 +26,7 @@ export function Empat_data(){
            duration={1}
            className="count-up-text text-red-500 font-bold text-[30px]"
            />
-            <p className="text-black font-medium text-xs">belum ada data</p>
+            <p className="text-black font-medium text-xs"></p>
           </div>
         ))}
       </main>

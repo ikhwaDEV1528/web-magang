@@ -65,6 +65,11 @@ body {
   border-radius: 100px;
 }
 
+.deskripsi{
+  background-color: black;
+  filter: drop-shadow(0px 0px 19px rgb(86, 86, 86));
+}
+
 
 .animasi-laporan{
   animation: laporan 0.5s alternate ease-out;
