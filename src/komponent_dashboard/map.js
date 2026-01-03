@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import Image from "next/image";
 import logo from '@/gambar-project/navy.png';
 
-export function Map_component() {
+export function Map() {
   useEffect(() => {
     const L = require('leaflet');
 
