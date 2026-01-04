@@ -17,8 +17,8 @@ export function Panel_mode_dev() {
     useContext(Value_Global)
 
   function ngerti() {
+     navigasi.push('/page_profile')
     set_isTriger_panel_mode_beta(false)
-    navigasi.push('/page_profile')
   }
 
   if (!isTriger_panel_mode_beta) return null

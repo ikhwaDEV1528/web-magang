@@ -15,7 +15,7 @@ export function Selamat_datang(){
 
                 <p className="pt-4 flex justify-center sm:ml-[30vh] sm:justify-start xl:pl-[33vw] 2xl:pl-[55vw] md:pl-[15vw]">
                     Belum Punya Akun?
-                    <button onClick={()=> navigasi.push('/page_registrasi')} className="text-yellow-600 pl-2">Daftar sekarang!</button>
+                    <button onClick={()=> navigasi.push('/page_registrasi')} className="daftar  pl-2">Daftar sekarang!</button>
                 </p>
             </div>
         </main>

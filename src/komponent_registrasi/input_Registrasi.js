@@ -40,7 +40,7 @@ export function Input_Registrasi(){
                         />
                     ))}
                 </div>
-                <p className="flex ml-20">Sudah Punya Akun? <button onClick={()=> back_to_login()} className="text-yellow-600 pl-2">Login Sekarang!</button></p>
+                <p className="flex ml-20">Sudah Punya Akun? <button onClick={()=> back_to_login()} className="sudah pl-2">Login Sekarang!</button></p>
             </div>
         </main>
     )

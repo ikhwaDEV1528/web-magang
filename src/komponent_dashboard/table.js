@@ -223,7 +223,7 @@ return(
   <input
     type="text"
     onChange={(e) => set_input_cari(e.target.value)}
-    placeholder='CARI WILAYAH...'
+    placeholder='Cari Wilayah...'
     className="
       w-full
       h-10
@@ -240,7 +240,7 @@ return(
       transition
     "
   />
-  <p className="text-yellow-400/80 italic text-xs mt-1">
+  <p className="text-slate-900 italic ml-1 text-xs mt-1">
     Cari berdasarkan wilayah!
   </p>
 </div>
@@ -285,19 +285,19 @@ return(
             index % 2 === 0 ? "bg-white" : "bg-gray-100"
           } hover:bg-yellow-100 transition`}
         >
-          <td className="border-2 border-gray-400 px-4 py-1 font-medium">
+          <td className="border-2 text-black border-gray-400 px-4 py-1 font-medium">
             {item.id}
           </td>
-          <td className="border-2 border-gray-400 px-4 py-1">
+          <td className="border-2 text-black border-gray-400 px-4 py-1">
             {item.wilayah}
           </td>
-          <td className="border-2 border-gray-400 px-4 py-1 text-right">
+          <td className="border-2 text-black border-gray-400 px-4 py-1 text-right">
             {item.totalKasus}
           </td>
-          <td className="border-2 border-gray-400 px-4 py-1 text-right text-green-600 font-semibold">
+          <td className="border-2 text-black border-gray-400 px-4 py-1 text-right text-green-600 font-semibold">
             {item.kasusSelesai}
           </td>
-          <td className="border-2 border-gray-400 px-4 py-1 text-right text-red-600 font-semibold">
+          <td className="border-2  text-black border-gray-400 px-4 py-1 text-right text-red-600 font-semibold">
             {item.kasusBelumSelesai}
           </td>
         </tr>

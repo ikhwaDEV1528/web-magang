@@ -1,14 +1,12 @@
 'use client'
 
-import { useState , useEffect, useContext } from "react";
+import { useState , useContext } from "react";
 import './komponent_login.css'
 import google from '@/gambar-project/google.png';
 import facebook from '@/gambar-project/facebook.png'
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Value_Global } from "@/nilai_global/global";
-
-
 
 export function Input_Login(){
 
@@ -24,15 +22,13 @@ export function Input_Login(){
     }
 
     function login(){
-       if(username_login == "" || password_login == ""){
+       if(username_login === "" || password_login === ""){
           alert('tidak boleh kosong!')
        }
        else if(password_login !== 'ikhwan123'){
         alert('PASSWORD:ikhwan123')
        }
-       
        else{
-        //  navigasi.push('/page_profile')
          localStorage.setItem('username',username_login)
          set_isTriger_panel_mode_beta(true)
        }
@@ -40,21 +36,39 @@ export function Input_Login(){
 
     return(
         <main>
-            <div className="flex flex-col gap-5 w-[85%] mx-auto mt-[5vh] sm:ml-[70vw]sm:mt-[10vh] sm:w-100 xl:ml-260 xl:mt-[-200px]  ">
+            <div className="flex flex-col gap-5 w-[85%] mx-auto mt-[5vh] sm:ml-[70vw] sm:mt-[10vh] sm:w-100 xl:ml-260 xl:mt-[-200px]">
                 
-                <h1 className="font-bold text-[26px] sm:text-[30px] text-center sm:text-left">Masuk</h1>
+                <h1 className="font-bold text-[26px] sm:text-[30px] text-center sm:text-left dark:text-white">Masuk</h1>
 
-                <input onChange={(e)=> set_username_login(e.target.value)} value={username_login} className="input-login p-4 rounded-md" placeholder="Masukan Username" />
-                <input onChange={(e)=> set_password_login(e.target.value)} className="input-login p-4 rounded-md" placeholder="Masukan Password" />
+                <input 
+                    onChange={(e)=> set_username_login(e.target.value)} 
+                    value={username_login} 
+                    className="input-login p-4 rounded-md dark:bg-gray-700 dark:text-white dark:placeholder-gray-300" 
+                    placeholder="Masukan Username" 
+                />
+                <input 
+                    onChange={(e)=> set_password_login(e.target.value)} 
+                    className="input-login p-4 rounded-md dark:bg-gray-700 dark:text-white dark:placeholder-gray-300" 
+                    placeholder="Masukan Password" 
+                />
 
-                <p className="text-right sm:ml-70">Lupa Password?</p>
+                <p className="text-right sm:ml-70 dark:text-gray-300">Lupa Password?</p>
 
-                <button onClick={()=> login()} className="bt-login bg-brown-400 text-white p-4 rounded-md font-bold ">Login</button>
-                <button onClick={()=> registrasi()} className="bt-registrasi-login bg-gray-200 p-4 rounded-md font-bold text-black border-2">Registrasi</button>
+                <button 
+                    onClick={()=> login()} 
+                    className="bt-login bg-brown-400 text-white p-4 rounded-md font-bold dark:bg-brown-700"
+                >
+                    Login
+                </button>
+                <button 
+                    onClick={()=> registrasi()} 
+                    className="bt-registrasi-login bg-gray-200 p-4 rounded-md font-bold text-black border-2 dark:bg-gray-800 dark:text-white dark:border-gray-600"
+                >
+                    Registrasi
+                </button>
 
-                <p className="italic text-center sm:ml-48 xl:ml-[-5px] font-bold">atau</p>
+                <p className="italic text-center sm:ml-48 xl:ml-[-5px] font-bold dark:text-gray-300">atau</p>
 
-             
                 <div className="flex justify-center gap-10">
                     {['facebook' , 'google'].map((item,index)=> (
                         <Image 

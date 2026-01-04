@@ -1,5 +1,7 @@
 .input-login{
-    background-color: rgb(230, 230, 216);
+    background-color: rgb(21, 10, 37);
+    color: yellow;
+    font-weight: bold;
 }
 
 .input-login:hover{
@@ -7,7 +9,7 @@
 }
 
 .bt-login{
-    background-color: rgb(84, 62, 62);
+    background-color: rgb(250, 119, 31);
 }
 
 .bt-login:hover{
@@ -17,4 +19,9 @@
 .bt-registrasi-login:hover{
     background-color: rgb(236, 234, 231);
     transform: scale(0.94);
+}
+
+.daftar{
+    color: rgb(243, 100, 48);
+    
 }
