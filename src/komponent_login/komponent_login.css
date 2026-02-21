@@ -1,6 +1,6 @@
 .input-login{
-    background-color: rgb(21, 10, 37);
-    color: yellow;
+    background-color: rgb(101, 11, 235);
+    color: rgb(81, 0, 255);
     font-weight: bold;
 }
 
@@ -17,7 +17,7 @@
       transform: scale(0.94);
 }
 .bt-registrasi-login:hover{
-    background-color: rgb(236, 234, 231);
+    background-color: rgb(227, 141, 12);
     transform: scale(0.94);
 }
 

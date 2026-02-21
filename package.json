@@ -12,6 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@lottiefiles/lottie-player": "^2.0.12",
+    "axios": "^1.13.2",
     "framer-motion": "^12.23.26",
     "gsap": "^3.14.2",
     "leaflet": "^1.9.4",
@@ -19,6 +20,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-lottie-player": "^2.1.0",
+    "react-otp-input": "^3.1.1",
     "recharts": "^3.6.0"
   },
   "devDependencies": {

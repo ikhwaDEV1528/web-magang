@@ -5,9 +5,9 @@
 export function Daftar_Akun(){
 
     return(
-        <main className="flex flex-col justify-center items-center xl:ml-50 xl:mt-30 xl:absolute w-100 md:ml-[30vw] sm:ml-[20vw] ml-[-3vw]">
-            <h1 className="daftar-akun font-bold text-[40px]">Daftar Akun!</h1>
-            <p className="font-bold text-[25px]">Silahkan Registrasi!</p>
-        </main>
+       <div className="text-center mb-6">
+          <h1 className="font-bold text-3xl sm:text-4xl text-slate-800">Daftar Akun!</h1>
+          <p className="font-semibold text-lg sm:text-xl text-slate-600">Silahkan Registrasi</p>
+       </div>
     )
 }

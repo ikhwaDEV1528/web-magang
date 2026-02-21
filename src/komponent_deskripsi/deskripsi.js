@@ -14,7 +14,7 @@ export function Deskripsi() {
   }
 
   return (
-   <main className="deskripsi text-white py-10 px-5 sm:px-10 mt-10 min-h-100 flex flex-col justify-between">
+   <main className="deskripsi sm:hidden lg:hidden text-white py-10 px-5 sm:px-10 mt-10 min-h-100 flex flex-col justify-between">
 
  
   <section className="space-y-1">

@@ -11,6 +11,7 @@ export function Empat_data(){
   const daftar_array = ['Kasus Baru Hari Ini' , 'Total Kasus Aktif' , 'Kasus Selesai Bulan Ini' ,'Kasus Prioritas']
   const count = [10,100,300,400]
   const text = ['+10% dari kemarin' , 'Pencurian (52%)' , 'terpenuhi 82%' ,'naik signifikan minggu ini']
+  
   return(
       <main className="flex gap-2 overflow-x-auto h-45 p-2 pt-5 pl:ml-20 xl:justify-center md:justify-center lg:justify-center">
         {daftar_array.map((item, index) => (

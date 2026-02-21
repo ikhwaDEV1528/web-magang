@@ -7,81 +7,114 @@ import facebook from '@/gambar-project/facebook.png'
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Value_Global } from "@/nilai_global/global";
-
+import axios from "axios";
 export function Input_Login(){
 
     const daftar_gambar = [{nama_gambar:google} , {nama_gambar:facebook}];
     const navigasi = useRouter();
 
     const [username_login , set_username_login] = useState('ikhwan');
-    const [password_login , set_password_login] = useState('')
+    const [password_login , set_password_password] = useState('')
     const {isTriger_panel_mode_beta , set_isTriger_panel_mode_beta} = useContext(Value_Global) 
     
     function registrasi(){
       navigasi.push('/page_registrasi')
     }
-
-    function login(){
-       if(username_login === "" || password_login === ""){
-          alert('tidak boleh kosong!')
-       }
-       else if(password_login !== 'ikhwan123'){
-        alert('PASSWORD:ikhwan123')
-       }
-       else{
-         localStorage.setItem('username',username_login)
-         set_isTriger_panel_mode_beta(true)
-       }
+async function login() {
+  try {
+    const API = 'https://squarrose-agrostologic-sharell.ngrok-free.dev/server_auth/login';
+    const ress = await axios.post(API, {
+      username: username_login,
+      password: password_login
+    });
+    alert('Login sukses!');
+    navigasi.push('/page_profile')
+    
+  } 
+  catch (err) {
+  if (err.response) {
+    // server membalas dengan status code error
+    if (err.response.status === 404) {
+      alert('Username/password salah');
+    } else {
+      alert('Server error: ' + JSON.stringify(err.response.data));
     }
+  } else if (err.request) {
+    // request terkirim tapi tidak ada respon → biasanya network/CORS error
+    alert('Tidak ada respon dari server (network/CORS error)');
+    console.log(err.request);
+  } else {
+    // error lain
+    alert('Error: ' + err.message);
+  }
+}
 
-    return(
-        <main>
-            <div className="flex flex-col gap-5 w-[85%] mx-auto mt-[5vh] sm:ml-[70vw] sm:mt-[10vh] sm:w-100 xl:ml-260 xl:mt-[-200px]">
-                
-                <h1 className="font-bold text-[26px] sm:text-[30px] text-center sm:text-left dark:text-white">Masuk</h1>
+}
 
-                <input 
-                    onChange={(e)=> set_username_login(e.target.value)} 
-                    value={username_login} 
-                    className="input-login p-4 rounded-md dark:bg-gray-700 dark:text-white dark:placeholder-gray-300" 
-                    placeholder="Masukan Username" 
-                />
-                <input 
-                    onChange={(e)=> set_password_login(e.target.value)} 
-                    className="input-login p-4 rounded-md dark:bg-gray-700 dark:text-white dark:placeholder-gray-300" 
-                    placeholder="Masukan Password" 
-                />
 
-                <p className="text-right sm:ml-70 dark:text-gray-300">Lupa Password?</p>
+  return(
+    <main className="flex  flex-col gap-4">
+         <input
+          autoComplete="off"
+          onChange={(e) => set_username_login(e.target.value)}
+          value={username_login}
+          className="
+          p-4 rounded-xl 
+          bg-slate-900 text-yellow-300
+          placeholder-yellow-300 
+          "
+           placeholder="Masukan Username"
+        />
 
-                <button 
-                    onClick={()=> login()} 
-                    className="bt-login bg-brown-400 text-white p-4 rounded-md font-bold dark:bg-brown-700"
-                >
-                    Login
-                </button>
-                <button 
-                    onClick={()=> registrasi()} 
-                    className="bt-registrasi-login bg-gray-200 p-4 rounded-md font-bold text-black border-2 dark:bg-gray-800 dark:text-white dark:border-gray-600"
-                >
-                    Registrasi
-                </button>
+        <input
+         type="password"
+         autoComplete="new-password"
+         onChange={(e) => set_password_password(e.target.value)}
+         className="
+         p-4 rounded-xl
+         bg-slate-900 text-yellow-300
+         placeholder-yellow-300
+         "
+         placeholder="Masukan Password"
+        />
 
-                <p className="italic text-center sm:ml-48 xl:ml-[-5px] font-bold dark:text-gray-300">atau</p>
+        <p className="text-right text-sm text-yellow-600 cursor-pointer hover:underline">Lupa Password?</p>
 
-                <div className="flex justify-center gap-10">
-                    {['facebook' , 'google'].map((item,index)=> (
-                        <Image 
-                            alt="image_provider"
-                            key={index}
-                            width={40}
-                            height={40}
-                            src={daftar_gambar[index].nama_gambar}
-                            onClick={()=> Login_pihak_ketiga(item)}
-                        />
-                    ))}
-                </div>
-            </div>
-        </main>
-    )
+        <button
+         onClick={login}
+         className="
+         bg-orange-400 hover:bg-orange-500
+         transition text-white p-4 rounded-xl 
+         font-extrabold"
+        >
+        Login
+        </button>
+
+        <button
+         onClick={registrasi}
+         className="
+         border-2 border-slate-900 p-4
+         rounded-xl font-bold text-slate-700"
+        >
+        Registrasi
+        </button>
+
+        <p className="text-center font-bold italic text-slate-400">atau</p>
+
+        {/* <div className="flex justify-center gap-6">
+           {['facebook', 'google'].map((item, index) => (
+            <Image
+             key={index}
+             alt="provider"
+             width={30}
+             height={30}
+             className="cursor-pointer hover:scale-110 transition"
+             src={daftar_gambar[index].nama_gambar}
+             onClick={() => Login_pihak_ketiga(item)}
+           />
+           ))}
+        </div> */}
+    </main>
+
+ )
 }

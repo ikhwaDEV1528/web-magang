@@ -13,14 +13,19 @@ function Halaman_Login(){
 
 
     return(
-        <main className="page-login">
-          <div>
-             <Selamat_datang/>
-             <Logo/>
-             <Input_Login/>
-             <Panel_mode_dev/>
-          </div>
-        </main>
+      <main className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 lg:px-30">
+        <div 
+        className="
+          w-full max-w-md  rounded-2xl shadow-lg p-6
+          lg:min-w-full lg:px-[25vw]
+         ">
+          <Logo />
+          <Selamat_datang />
+          <Input_Login />
+          <Panel_mode_dev />
+       </div>
+    </main>
+
     )
 }
 

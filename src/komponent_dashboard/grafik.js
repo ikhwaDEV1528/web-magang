@@ -63,7 +63,7 @@ export function Grafik(){
          <div>
            
 
-            <div className="w-[100vw]  ml-[-8vw] overflow-y-auto py-5 h-[300px]">
+<div className="w-[100vw]  ml-[-8vw] overflow-y-auto py-5 h-[300px]">
   <ResponsiveContainer width="100%" height="100%">
     <LineChart data={trenKasusNasional}>
       <CartesianGrid strokeDasharray="3 3" />

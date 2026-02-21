@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 export function Header_Dashboard(){
 
-const NAV_ITEMS = ['Dashboard', 'kasus', 'Laporan Kejadian'];
+const NAV_ITEMS = ['Dashboard', 'Buat Kejadian/Kasus', 'Lihat Kejadian/kasus','Skck'];
 const navigasi = useRouter()
 const {isTriger_header_color , set_isTriger_header_color} = useContext(Value_Global)
 
@@ -40,7 +40,7 @@ const {isTriger_header_color , set_isTriger_header_color} = useContext(Value_Glo
       <button onClick={()=> navigasi.push('/page_profile')} className="absolute mt-1.5 ml-2 text-white text-[30px] hover:scale-110 transition hover:text-gray-300"><i class="bi bi-box-arrow-in-left"></i></button>
       <main className="flex gap-3 h-14 items-center justify-center pl-13 xl:ml-[-200px]">
         {NAV_ITEMS.map((item, index) => (
-          <button onClick={()=> navigasi_page(item == 'kasus' ? 'page_kasus':item == 'Dashboard' ? 'page_dashboard':'page_laporan_kejadian')} style={{background:isTriger_header_color[index] == 1 ? 'white':'',color:isTriger_header_color[index] == 1 ? 'red':''}}
+          <button onClick={()=> navigasi_page(item == 'Dashboard' ? 'page_dashboard' : item == 'Buat Kejadian/Kasus' ? "page_kasus" : item == 'Lihat Kejadian/kasus' ? 'page_laporan_kejadian': 'page_skck')} style={{background:isTriger_header_color[index] == 1 ? 'white':'',color:isTriger_header_color[index] == 1 ? 'red':''}}
             key={index}
             className="
               text-brown font-semibold 

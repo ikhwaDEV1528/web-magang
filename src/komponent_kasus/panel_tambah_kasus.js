@@ -25,7 +25,14 @@ export function Panel_tambah_kasus(){
 
 
   function tambah_kasus(){
-     set_daftar(prev => [...prev,{LP:Math.random() * 7 , jenis:input_jenis_kejahatan,pelapor:input_nama_pelapor,status:input_status_kasus,penyidik:input_penyidik}])
+     set_daftar(prev => [...prev,
+      {
+       LP:Math.random() * 7 ,
+       jenis:input_jenis_kejahatan,
+       pelapor:input_nama_pelapor,
+       status:input_status_kasus,
+       penyidik:input_penyidik
+      }])
      set_input_jenis_kejahatan('')
      set_input_nama_pelapor('')
      set_input_status_kasus('')
