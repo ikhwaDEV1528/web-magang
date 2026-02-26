@@ -78,7 +78,7 @@ async function login() {
          placeholder="Masukan Password"
         />
 
-        <p className="text-right text-sm text-yellow-600 cursor-pointer hover:underline">Lupa Password?</p>
+        <p onClick={()=> navigasi.push('/page_reqreset_pass')} className="text-right text-sm text-yellow-600 cursor-pointer hover:underline">Lupa Password?</p>
 
         <button
          onClick={login}
